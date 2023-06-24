@@ -1,4 +1,5 @@
 using Game.Level_1.Scripts.Managers;
+using Game.Level_lab.Scripts.Attacker;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,11 +12,13 @@ namespace Game.Level_1.Scripts
         private int _idxPoint = 0;
         [SerializeField] private float _speed = 1.0f;
         [SerializeField] private int _damage = 1;
+        private AttackerHealth _health;
 
         // Start is called before the first frame update
         void Start()
         {
             _pathManager = PathManager.Instance;
+            _health = GetComponent<AttackerHealth>();
         }
 
         // Update is called once per frame
@@ -50,6 +53,11 @@ namespace Game.Level_1.Scripts
                     Destroy(gameObject);
                 }
 
+            }
+
+            if (collider2D.gameObject.CompareTag("Bullet"))
+            {
+                _health.TakeDamage(1);
             }
         }
         

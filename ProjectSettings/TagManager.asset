@@ -6,6 +6,7 @@ TagManager:
   tags:
   - path
   - monster
+  - Bullet
   layers:
   - Default
   - TransparentFX
