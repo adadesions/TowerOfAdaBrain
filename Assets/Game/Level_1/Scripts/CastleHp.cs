@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.Level_1.Scripts
 {
-    public class HP : MonoBehaviour
+    public class CastleHp : MonoBehaviour
     {
         [SerializeField] int _maxHP = 10;
         [SerializeField] private TextMeshProUGUI _uiTextHP;

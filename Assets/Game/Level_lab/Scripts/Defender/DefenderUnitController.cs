@@ -13,11 +13,12 @@ namespace Game.Level_lab.Scripts.Defender
         [SerializeField] private float _bulletSpeedScale = 100.0f;
         private float _lastTimeShot = 0.0f;
         [SerializeField] private float _shootingCooldown = 0.3f;
+        private Transform _bulletStore;
 
         // Start is called before the first frame update
         void Start()
         {
-        
+            _bulletStore = GameObject.FindGameObjectWithTag("BulletStore").transform;
         }
 
         // Update is called once per frame
@@ -34,6 +35,7 @@ namespace Game.Level_lab.Scripts.Defender
             
             _lastTimeShot = Time.time;
             var bullet = Instantiate(_bulletPrefab, _muzzle.position, quaternion.identity);
+            bullet.transform.SetParent(_bulletStore);
             if (bullet.TryGetComponent<Rigidbody2D>(out var rb))
             {
                 rb.velocity =  _bulletSpeed * _bulletSpeedScale * Time.fixedDeltaTime * _direction;

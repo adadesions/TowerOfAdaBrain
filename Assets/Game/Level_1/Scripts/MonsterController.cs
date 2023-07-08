@@ -46,11 +46,11 @@ namespace Game.Level_1.Scripts
                     print("IDX: " + _idxPoint);
                 }
 
-                var hp = collider2D.gameObject.GetComponent<HP>();
-                if (hp)
+                var castleHp = collider2D.gameObject.GetComponent<CastleHp>();
+                if (castleHp)
                 {
-                    hp.TakeDamage(_damage);
-                    Destroy(gameObject);
+                    castleHp.TakeDamage(_damage);
+                    _health.OnDead();
                 }
 
             }

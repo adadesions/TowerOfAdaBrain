@@ -1,3 +1,4 @@
+using Game.Level_1.Scripts.Managers;
 using UnityEngine;
 
 namespace Game.Level_lab.Scripts.Attacker
@@ -24,8 +25,10 @@ namespace Game.Level_lab.Scripts.Attacker
             }
         }
 
-        private void OnDead()
+        public void OnDead()
         {
+            WaveManager.Instance.GlobalCapacity--;
+            print("GlobalCap(Dead): " + WaveManager.Instance.GlobalCapacity);
             Destroy(gameObject);
         }
     }
