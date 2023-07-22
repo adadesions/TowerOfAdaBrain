@@ -46,6 +46,7 @@ namespace Game.Level_1.Scripts.Managers
 
         public void ToggleButtonState(UnitButton unitButton)
         {
+            // Use it later
             unitButton.IsClicked = !unitButton.IsClicked;
         }
         
