@@ -28,7 +28,6 @@ namespace Game.Level_lab.Scripts.Defender
         {
             if (other.gameObject.CompareTag("monster"))
             {
-                print("Bullet");
                 Destroy(gameObject);
             }
         }

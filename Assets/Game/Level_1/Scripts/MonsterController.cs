@@ -43,7 +43,6 @@ namespace Game.Level_1.Scripts
                 if (_idxPoint < _pathManager.RoutePath.Count - 1)
                 {
                     _idxPoint++;
-                    print("IDX: " + _idxPoint);
                 }
 
                 var castleHp = collider2D.gameObject.GetComponent<CastleHp>();

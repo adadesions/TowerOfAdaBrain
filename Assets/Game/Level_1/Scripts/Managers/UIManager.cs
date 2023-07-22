@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Game.Level_1.Scripts.Managers
@@ -7,6 +8,7 @@ namespace Game.Level_1.Scripts.Managers
     {
         private static UIManager _instance;
         [SerializeField] private GameObject _endGamePanel;
+        private UnitManager _unitManager;
 
         public static UIManager Instance
         {
@@ -34,12 +36,18 @@ namespace Game.Level_1.Scripts.Managers
         void Start()
         {
             _endGamePanel.SetActive(false);
+            _unitManager = UnitManager.Instance;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void OnSelectUnit(GameObject unitPrefab)
         {
-        
+            _unitManager.SetSelectedUnitFromUI(_unitManager.SelectedUnit ? null : unitPrefab);
         }
+
+        public void ToggleButtonState(UnitButton unitButton)
+        {
+            unitButton.IsClicked = !unitButton.IsClicked;
+        }
+        
     }
 }

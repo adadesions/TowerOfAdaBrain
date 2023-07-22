@@ -8,6 +8,8 @@ TagManager:
   - monster
   - Bullet
   - BulletStore
+  - GridCell
+  - DefenderStore
   layers:
   - Default
   - TransparentFX

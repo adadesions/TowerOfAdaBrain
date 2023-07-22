@@ -56,7 +56,6 @@ namespace Game.Level_lab.Scripts.Defender
             if (other.gameObject.CompareTag("monster") && !_target)
             {
                 _target = other.gameObject;
-                print("Enter: " + _target.name);
             }
         }
 
@@ -64,7 +63,6 @@ namespace Game.Level_lab.Scripts.Defender
         {
             if (other.gameObject.CompareTag("monster") && other.gameObject.Equals(_target))
             {
-                print("Exit: " + _target.name);
                 _target = null;
             }
         }
